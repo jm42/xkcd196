@@ -35,8 +35,8 @@ def jiggle(e=12):
 
 
 def loop(interval):
+    # Non-blocking sleep
     nexttime = time.time() + interval
-
     while nexttime > time.time():
         time.sleep(1)
 
