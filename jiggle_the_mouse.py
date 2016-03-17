@@ -24,9 +24,15 @@ else:
         display.sync()
 
 
+def divs(n, m):
+    if m == 1: return [1]
+    if n % m == 0: return [m] + divs(n, m - 1)
+    return divs(n, m - 1)
+
+
 def jiggle(e=12):
     x, y = get_mouse_pos()
-    for i in range(1, 4):
+    for i in reversed(divs(e, e)):
         d = int(e / i)
         for dx, dy in [(d, 0), (-d, 0)]:
             set_mouse_pos(x + dx, y + dy)
