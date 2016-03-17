@@ -12,7 +12,6 @@ elif sys.platform == 'win32':
 else:
     from Xlib import X
     from Xlib.display import Display
-    from Xlib.ext.xtest import fake_input
 
     display = Display(None)
 
